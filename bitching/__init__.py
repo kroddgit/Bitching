@@ -9,19 +9,20 @@ from cloudinary.utils import cloudinary_url
 # Flask imports
 from flask import Flask, render_template, flash
 from flask_mail import Mail
-from flask.ext.sqlalchemy import SQLAlchemy
-from flask.ext.login import (
+from flask_sqlalchemy import SQLAlchemy
+
+from flask_login import (
     LoginManager,
     current_user,
     login_user,
     logout_user,
 )
-from flask.ext.uploads import (
+from flask_uploads import (
     configure_uploads,
     IMAGES,
     UploadSet,
 )
-from flask.ext.wtf import (
+from flask_wtf import (
     CsrfProtect,
 )
 
