@@ -1,0 +1,29 @@
+{% extends 'headers/layout.html' %}
+{% from "headers/formRender.html" import render_field %}
+{% block body %}
+<div>
+    <form method="POST" action="/bitch/home" enctype="multipart/form-data">
+      {{ form.hidden_tag()}}
+        <dl>
+            {{ form.bitch_input(class_="form-control", rows="5", required=true) }}
+        </dl>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+    </form>
+</div>
+{% for bitch in bitchList %}
+<div class="container-fluid text-center entry" style="background-color: {{ bitch.user.color}};color: #ffffff;">
+  {% if user.id == bitch.user.id %}
+  <div align="right">
+  {% endif %}
+  {% if user.id != bitch.user.id %}
+  <div align="left">
+  {% endif %}
+      <h3 class="margin">{{ bitch.user.username }}</h3>
+      {% if bitch.user.profilepicUrl %}
+      <img src="{{ bitch.user.profilepicUrl }}" class="img-responsive img-circle margin" style="display:inline"  width="150" height="150">
+      {% endif %}
+      <h3>{{ bitch.message }}</h3>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,8 @@
+{% from "headers/formRender.html" import render_field %}
+{% with messages = get_flashed_messages() %}
+   {% if messages %}
+      {% for message in messages %}
+         {{ message }}
+      {% endfor %}
+   {% endif %}
+{% endwith %}
