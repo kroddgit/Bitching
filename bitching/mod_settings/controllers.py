@@ -12,7 +12,7 @@ from flask import (
 from sqlalchemy import update
 from werkzeug import secure_filename
 
-from flask.ext.login import (
+from flask_login import (
     current_user,
     login_required
 )

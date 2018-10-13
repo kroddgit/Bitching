@@ -17,7 +17,7 @@ from werkzeug.security import (
     generate_password_hash,
     check_password_hash
 )
-from flask.ext.login import (
+from flask_login import (
     current_user,
     login_required,
     login_user,

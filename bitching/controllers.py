@@ -13,7 +13,7 @@ from werkzeug import (
     check_password_hash,
     generate_password_hash
 )
-from flask.ext.login import (
+from flask_login import (
     current_user,
     login_required,
     login_user,
