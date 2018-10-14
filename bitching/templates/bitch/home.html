@@ -27,7 +27,7 @@
         {{ form.hidden_tag()}}
         <div class="form-group">
           <!-- <textarea class="form-control" rows="3" required></textarea> -->
-              {{ form.bitch_input(class_="form-control", rows="5", required=true) }}
+              {{ form.bitch_input(class_="form-control", rows="5", required=true, id="bitch_input") }}
         </div>
         <button type="submit" class="btn btn-success">Submit</button>
       </form>
@@ -45,7 +45,7 @@
           {% endif %}
         </div>
         <div class="col-sm-10">
-          <h4>{{ bitch.user.username }} <small>{{ bitch.date }}</small></h4>
+          <h4>{{ bitch.user.username }} <small>{{ bitch.date.strftime('%Y-%m-%d %H:%M') }}</small></h4>
           <p>{{ bitch.message }}</p>
           <br>
         </div>
@@ -54,7 +54,13 @@
     </div>
   </div>
 </div>
-
+<script>
+  $(document).ready(function(){
+    if ($("#bitch_input").is(':focus')) {
+      alert("hello");
+    }
+  });
+</script>
 </body>
 </html>
 {% endblock %}

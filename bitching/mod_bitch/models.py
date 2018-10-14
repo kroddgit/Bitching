@@ -13,7 +13,7 @@ class Bitch(db.Model):
     __tablename__ = 'bitch'
     id = db.Column(db.Integer, primary_key=True)
     userId = db.Column(db.Integer, db.ForeignKey(User.id), nullable=False)
-    message = db.Column(db.String(200))
+    message = db.Column(db.String(260))
     date = db.Column(db.DateTime, default=datetime.datetime.now())
     user = relationship("User", backref="Bitch")
 
