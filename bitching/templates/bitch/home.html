@@ -1,28 +1,60 @@
 {% extends 'headers/layout.html' %}
 {% block body %}
-<div>
-    <form method="POST" action="/bitch/home" enctype="multipart/form-data">
-      {{ form.hidden_tag()}}
-        <dl>
-            {{ form.bitch_input(class_="form-control", rows="5", required=true) }}
-        </dl>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
-    </form>
-</div>
-{% for bitch in bitchList %}
-<div class="container-fluid text-center entry" style="background-color: {{ bitch.user.color}};color: #ffffff;">
-  {% if user.id == bitch.user.id %}
-  <div align="right">
-  {% endif %}
-  {% if user.id != bitch.user.id %}
-  <div align="left">
-  {% endif %}
-      <h3 class="margin">{{ bitch.user.username }}</h3>
-      {% if bitch.user.profilepicUrl %}
-      <img src="{{ bitch.user.profilepicUrl }}" class="img-responsive img-circle margin" style="display:inline"  width="150" height="150">
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-2 sidenav" align="center">
+      <h4>{{ user.username }}</h4>
+      <ul class="nav">
+        {% if user.profilepicUrl %}
+        <img src="{{ user.profilepicUrl }}" class="img-responsive img-circle margin" style="display:inline"  width="250" height="250">
+        {% endif %}
+      </ul><br>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search Blog..">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </span>
+      </div>
+    </div>
+
+    <div class="col-sm-5">
+
+      <h4>Whats pissing you off?</h4>
+      <form method="POST" action="/bitch/home" role="form" enctype="multipart/form-data">
+        {{ form.hidden_tag()}}
+        <div class="form-group">
+          <!-- <textarea class="form-control" rows="3" required></textarea> -->
+              {{ form.bitch_input(class_="form-control", rows="5", required=true) }}
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+      <br><br>
+      {% for bitch in bitchList %}
+      {% if user.id != bitch.user.id %}
+      <div class="row" align="left">
       {% endif %}
-      <h3>{{ bitch.message }}</h3>
+      {% if user.id == bitch.user.id %}
+      <div class="row" align="right">
+      {% endif %}
+        <div class="col-sm-2 text-center">
+          {% if bitch.user.profilepicUrl %}
+          <img src="{{ bitch.user.profilepicUrl }}" class="img-circle" height="65" width="65" alt="Avatar">
+          {% endif %}
+        </div>
+        <div class="col-sm-10">
+          <h4>{{ bitch.user.username }} <small>{{ bitch.date }}</small></h4>
+          <p>{{ bitch.message }}</p>
+          <br>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
   </div>
 </div>
-{% endfor %}
+
+</body>
+</html>
 {% endblock %}

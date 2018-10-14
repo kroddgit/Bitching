@@ -38,15 +38,12 @@ import cloudinary.api
 
 mod_settings = Blueprint('settings', __name__, url_prefix='/bitch')
 
-@mod_settings.route('/settings', methods=['GET', 'POST'])
+@mod_settings.route('/settings', methods=['GET'])
 @login_required
 def settings():
     form = SettingsForm()
     if form.validate_on_submit():
         user = User.query.filter_by(id=current_user.id).first()
-        print form.colorField.data
-        type(form.colorField.data)
-        user.color = str(form.colorField.data)
         db.session.commit()
         return redirect(url_for("settings.settings"))
     else:

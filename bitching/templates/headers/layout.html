@@ -137,26 +137,40 @@
     height: auto;
 }
 
-body {
+ body {
   padding-top: 65px;
-  background-image: url("/static/images/background.png");
-  height: 80%;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
 }
 .entry {
   color: #ffffff;
   opacity: 0.9;
 }
-  </style>
+.row.content {height: 1500px}
+
+/* Set gray background color and 100% height */
+.sidenav {
+  background-color: #f1f1f1;
+  height: 100%;
+  padding-top: 65px;
+
+}
+
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+  .sidenav {
+    height: auto;
+    padding: 15px;
+  }
+  .row.content {height: auto;}
+}
+</style>
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="/bitch/home">Bitching</a>
+      <img src="/static/images/background.png" height="40px" width="40px"/>
     </div>
     <!-- <ul class="nav navbar-nav">
       <li><a href="#"><img class="resize"src="/static/images/background.png"></a></li>

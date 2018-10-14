@@ -2,18 +2,6 @@
 {% block body %}
     <h1>Hello {{ user.username }}!</h1>
     <div>
-          <div style="float:left;background-color: #425bbd;opacity: 0.9; width:50%;height:300px">
-          <h2>What color should your bitches be?</h2>
-          <form action="/bitch/settings" method="POST">
-            {{ form.hidden_tag()}}
-            <div>
-              {{ form.colorField(required=true, class_="form-control", value=user.color) }}
-            </div>
-            <div>
-              <button class="btn btn-lg btn-primary btn-block" type="submit">Save</button>
-            </div>
-          </form>
-          </div>
           <div style="float:right;background-color: #425bbd;opacity: 0.9;width:50%; height:300px">
           {% if user.profilepicUrl %}
           <div>

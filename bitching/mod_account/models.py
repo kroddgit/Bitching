@@ -18,14 +18,12 @@ class User(db.Model):
     _is_active = db.Column(db.Boolean)
     _is_authenticated = db.Column(db.Boolean, default=False)
     profilepicUrl = db.Column(db.String(32), index=True, unique=True)
-    color = db.Column(db.String(30))
 
-    def __init__(self,username,email,password, is_active, color):
+    def __init__(self,username,email,password, is_active):
         self.username = username
         self.email = email
         self.password = password
         self.is_active = is_active
-        self.color = color
 
     @property
     def is_authenticated(self):
