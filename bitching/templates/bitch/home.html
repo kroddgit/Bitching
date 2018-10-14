@@ -23,13 +23,13 @@
     <div class="col-sm-5">
 
       <h4>Whats pissing you off?</h4>
-      <form method="POST" action="/bitch/home" role="form" enctype="multipart/form-data">
+      <form method="POST" action="/bitch/home" role="form" id="bitch_form" enctype="multipart/form-data">
         {{ form.hidden_tag()}}
         <div class="form-group">
           <!-- <textarea class="form-control" rows="3" required></textarea> -->
               {{ form.bitch_input(class_="form-control", rows="5", required=true, id="bitch_input") }}
         </div>
-        <button type="submit" class="btn btn-success">Submit</button>
+        <button id="bitch_submit" type="submit" class="btn btn-success">Submit</button>
       </form>
       <br><br>
       {% for bitch in bitchList %}
@@ -56,9 +56,12 @@
 </div>
 <script>
   $(document).ready(function(){
-    if ($("#bitch_input").is(':focus')) {
-      alert("hello");
-    }
+    $("#bitch_input").keyup(function (e) {
+          var code = e.which;
+          if(code == 13){
+            $("#bitch_form").submit();
+          }
+    });
   });
 </script>
 </body>
