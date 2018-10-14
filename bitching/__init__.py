@@ -17,16 +17,10 @@ from flask_login import (
     login_user,
     logout_user,
 )
-from flask_uploads import (
-    configure_uploads,
-    IMAGES,
-    UploadSet,
-)
+
 from flask_wtf import (
     CsrfProtect,
 )
-
-IMAGE_SET = UploadSet('images', IMAGES)
 
 # Define the web app
 sys.stdout.write('Creating Flask app...')
