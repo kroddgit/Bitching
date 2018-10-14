@@ -167,6 +167,16 @@ body {
     </ul>
   </div>
 </nav>
+{% from "headers/formRender.html" import render_field %}
+{% with messages = get_flashed_messages() %}
+     {% if messages %}
+     <div id="flashed" class="alert alert-danger">
+        {% for message in messages %}
+           {{ message }}
+        {% endfor %}
+     </div>
+     {% endif %}
+  {% endwith %}
 {% block body %}
 {% endblock %}
 </body>

@@ -1,63 +1,8 @@
 
-<html lang="en">
-<head>
-  <title>Login</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script>
-  $(document).ready(function(){
-    if($('#flashed').length > 0){
-        $('#flashed').fadeIn('fast').delay(2000).fadeOut('slow');
-    }
-  });
-  </script>
-  <style>
-  #container {
-    position:fixed;
-    top: 50%;
-    left: 50%;
-    width:30em;
-    height:18em;
-    margin-top: -9em;
-    margin-left: -15em;
-    border: 1px solid #ccc;
-    background-color: #f3f3f3;
-    opacity:0.9;
-
-  }
-  #flashed {
-    position: relative;
-    top: 0px;
-    right: 0px;
-    background-color: red;
-    opacity:0.9;
-    width:15%;
-    height:30px;
-  }
-  body {
-    background-image: url("/static/images/background.png");
-    height: 80%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  </style>
-</head>
+{% extends 'headers/logged_out_header.html' %}
+{% block body %}
 <body>
-{% from "headers/formRender.html" import render_field %}
-{% with messages = get_flashed_messages() %}
-     {% if messages %}
-     <div id="flashed">
-        {% for message in messages %}
-           {{ message }}
-        {% endfor %}
-     </div>
-     {% endif %}
-  {% endwith %}
-    <div class="container" id="container">
+    <div class="container" id="login_container">
       <form class="form-signin" method="POST" action="/bitch/login">
         {{ form.hidden_tag()}}
         <h2 class="form-signin-heading">Please sign in</h2>
@@ -68,3 +13,4 @@
       <a href="/bitch/register">or register here</a>
     </div>
 </body>
+{% endblock %}
