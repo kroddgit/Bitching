@@ -23,3 +23,4 @@ newUser = User("dummy", "dumb@dumb.com", hash, True)
 newUser.is_authenticated(True)
 db.session.add(newUser)
 db.session.commit()
+print "session committed"
