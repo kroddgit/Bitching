@@ -1,26 +1,6 @@
 {% extends 'headers/layout.html' %}
 {% block body %}
-    <!-- <h1>Hello {{ user.username }}!</h1>
-    <div>
-          <div>
-          {% if user.profilepicUrl %}
-          <div>
-              <img src="{{ user.profilepicUrl }}" width="200" height="200">
-          </div>
-          {% endif %}
-          {% if not user.profilepicUrl %}
-          <h2>Upload a Profile pic</h2>
-          {% endif %}
 
-          <form action = "/bitch/uploader" method = "POST"
-             enctype = "multipart/form-data">
-             {{ form.hidden_tag()}}
-             <input type = "file" name = "file" />
-             <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
-          </form>
-          <div>
-    <div>
-<div> -->
 <div class="container-fluid">
   <div class="row content">
     <div class="col-sm-2 sidenav" align="center">
@@ -31,12 +11,12 @@
         {% endif %}
       </ul><br>
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search Blog..">
+        <!-- <input type="text" class="form-control" placeholder="Search Blog..">
         <span class="input-group-btn">
           <button class="btn btn-default" type="button">
             <span class="glyphicon glyphicon-search"></span>
           </button>
-        </span>
+        </span> -->
       </div>
     </div>
 
