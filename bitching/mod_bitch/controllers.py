@@ -48,6 +48,5 @@ def home():
         return redirect(url_for("bitch.home"))
     else:
         bitchList = Bitch.query.all()
-        bitchList.sort(key=lambda r: r.date, reverse=True)
         user = User.query.filter_by(id=current_user.id).first()
         return render_template('bitch/home.html', form=form, bitchList=bitchList, user=user)

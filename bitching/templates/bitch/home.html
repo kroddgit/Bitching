@@ -32,7 +32,7 @@
         <button id="bitch_submit" type="submit" class="btn btn-success">Submit</button>
       </form>
       <br><br>
-      {% for bitch in bitchList %}
+      {% for bitch in bitchList|sort(attribute='date', reverse = True) %}
       {% if user.id != bitch.user.id %}
       <div class="row" align="left">
       {% endif %}
