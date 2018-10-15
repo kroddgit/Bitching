@@ -19,7 +19,7 @@ Base.metadata.reflect(bind=engine)
 db.create_all()
 
 hash = generate_password_hash("password")
-newUser = User("krodd", "krodd@tcservices.biz", hash, True)
+newUser = User("dummy", "dumb@dumb.com", hash, True)
 newUser.is_authenticated(True)
 db.session.add(newUser)
 db.session.commit()
