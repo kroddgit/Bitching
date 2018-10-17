@@ -1,28 +1,29 @@
-SAMPLE config.py
-------------------------------------------------------
-import cloudinary
+# Bitching
+
+## SAMPLE config.py
+```pythonimport cloudinary
 import cloudinary.api
 cloud = cloudinary.config.update = ({
-    'user',
-    'key',
-    'where4'
+    'cloud_name',
+    'api_key',
+    'api_secret'
 })
 from bitching import app
-cloudinary.config(cloud_name='df7hg9q6i', api_key='639662597519516',
-                  api_secret='cC2ak5GbxVWkbr9qg4UphZOBrw4')
-app.secret_key="custom_key"
---------------------------------------------------------
+cloudinary.config(cloud_name='cloud_name', api_key='api_key',
+                  api_secret='api_secret')
+app.secret_key="custom_key" 
+```
 
-setup virtual environment
+## setup virtual environment
 *from project directory*
---------------------------------------------------------
-pip install virtualenv
+
+```ssh pip install virtualenv
 virtualenv env
 source env/bin/activate
 pip install -r requirements.txt
---------------------------------------------------------
-create database
---------------------------------------------------------
+```
+## create database
+```ssh 
 ./db.sh
-
-Then you are good to python run.py
+```
+Then you are good to python ```python run.py ```
