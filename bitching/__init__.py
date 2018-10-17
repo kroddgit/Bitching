@@ -1,16 +1,10 @@
 # System imports
 import os
 import sys
-import cloudinary
-import cloudinary.uploader
-from cloudinary.uploader import upload
-import cloudinary.api
-from cloudinary.utils import cloudinary_url
 # Flask imports
 from flask import Flask, render_template, flash
 from flask_mail import Mail
 from flask_sqlalchemy import SQLAlchemy
-
 from flask_login import (
     LoginManager,
     current_user,
@@ -22,10 +16,14 @@ from flask_wtf import (
     CsrfProtect,
 )
 
+
 # Define the web app
 sys.stdout.write('Creating Flask app...')
 app = Flask(__name__)
 sys.stdout.write('Done\n')
+
+
+app.config.from_object('config')
 
 # Enable CSRF Protection
 sys.stdout.write('Enabling CSRF Protection...')
@@ -87,10 +85,3 @@ sys.stdout.write('Done\n')
 sys.stdout.write('\nApp done loading.\n')
 app.secret_key="kgrodd"
 
-cloud = cloudinary.config.update = ({
-    'df7hg9q6i',
-    '639662597519516',
-    'cC2ak5GbxVWkbr9qg4UphZOBrw4'
-})
-cloudinary.config(cloud_name='df7hg9q6i', api_key='639662597519516',
-                  api_secret='cC2ak5GbxVWkbr9qg4UphZOBrw4')
