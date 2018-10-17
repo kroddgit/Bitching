@@ -83,5 +83,4 @@ app.register_blueprint(mod_settings)
 sys.stdout.write('Done\n')
 
 sys.stdout.write('\nApp done loading.\n')
-app.secret_key="kgrodd"
 
