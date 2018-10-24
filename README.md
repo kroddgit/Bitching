@@ -22,7 +22,7 @@ virtualenv env
 source env/bin/activate
 pip install -r requirements.txt
 ```
-## create database
+## creating the database
 ```ssh 
 ./db.sh
 ```
