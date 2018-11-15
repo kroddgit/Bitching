@@ -71,6 +71,7 @@ from bitching.controllers import mod_default
 from bitching.mod_account.controllers import mod_account
 from bitching.mod_bitch.controllers import mod_bitch
 from bitching.mod_settings.controllers import mod_settings
+from bitching.mod_chat.controllers import mod_chat
 
 
 # Register blueprints
@@ -79,8 +80,8 @@ app.register_blueprint(mod_default)
 app.register_blueprint(mod_account)
 app.register_blueprint(mod_bitch)
 app.register_blueprint(mod_settings)
+app.register_blueprint(mod_chat)
 
 sys.stdout.write('Done\n')
 
 sys.stdout.write('\nApp done loading.\n')
-
