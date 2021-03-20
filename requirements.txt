@@ -30,7 +30,7 @@ intervals==0.8.1
 ipaddress==1.0.22
 ipython==0.13.1
 itsdangerous==0.24
-Jinja2==2.8
+Jinja2==2.11.3
 logilab-astng==0.23.1
 logilab-common==1.4.2
 MarkupSafe==0.23
