@@ -61,7 +61,7 @@ six==1.11.0
 SQLAlchemy==1.0.8
 stevedore==1.28.0
 subprocess32==3.2.7
-urllib3==1.23
+urllib3==1.26.5
 validators==0.12.2
 virtualenv==13.1.2
 virtualenv-clone==0.2.6
